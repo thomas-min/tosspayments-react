@@ -5,6 +5,10 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/thoams-min"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomas-min/tosspayments-react"
+  },
   "scripts": {
     "rollup": "rollup -c"
   },
