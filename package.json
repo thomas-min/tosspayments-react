@@ -1,6 +1,6 @@
 {
   "name": "@thomas-min/tosspayments-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An unofficial react wrapper around tosspayments browser-sdk",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/thoams-min"
