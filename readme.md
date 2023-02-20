@@ -1,1 +1,1 @@
-# Tosspayments React
+# tosspayments-react
