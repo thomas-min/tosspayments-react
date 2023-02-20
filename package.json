@@ -1,6 +1,6 @@
 {
   "name": "@thomas-min/tosspayments-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "An unofficial react wrapper around tosspayments browser-sdk",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/thoams-min"
@@ -10,7 +10,7 @@
     "url": "https://github.com/thomas-min/tosspayments-react"
   },
   "scripts": {
-    "rollup": "rollup -c"
+    "build": "rollup -c"
   },
   "keywords": [
     "react",
