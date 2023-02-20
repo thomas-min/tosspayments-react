@@ -8,7 +8,7 @@ export const PaymentAgreement: React.FC<
 
   useEffect(() => {
     paymentWidget?.renderAgreement("#" + id);
-  }, [paymentWidget]);
+  }, [id, paymentWidget]);
 
   return <div id={id} {...props} />;
 };
