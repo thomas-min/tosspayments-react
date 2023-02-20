@@ -8,7 +8,7 @@ export const PaymentMethod: React.FC<
 
   useEffect(() => {
     paymentWidget?.renderPaymentMethods("#" + id, amount);
-  }, [paymentWidget]);
+  }, [amount, id, paymentWidget]);
 
   return <div id={id} {...props} />;
 };
