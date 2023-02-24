@@ -43,6 +43,7 @@
   },
   "peerDependencies": {
     "@tosspayments/payment-widget-sdk": "^0.5.4",
+    "@tosspayments/payment-sdk": "^1.4.0",
     "react": "^18.2.0"
   },
   "main": "dist/cjs/index.js",
