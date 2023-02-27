@@ -2,7 +2,11 @@ import { useContext } from "react";
 import { PaymentWidgetContext } from "../contexts";
 
 export const usePaymentWidget = () => {
-  const paymentWidget = useContext(PaymentWidgetContext);
+  const context = useContext(PaymentWidgetContext);
 
-  return paymentWidget;
+  if (!context) {
+    throw "usePaymentWidget must be used inside PaymentWidgetProvider";
+  }
+
+  return context.paymentWidget;
 };
