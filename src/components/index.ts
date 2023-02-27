@@ -1,3 +1,3 @@
-export * from "./PaymentAgreement";
-export * from "./PaymentMethod";
+export * from "./PaymentAgreementSection";
+export * from "./PaymentMethodsSection";
 export * from "./PaymentWIdgetProvider";
