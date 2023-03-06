@@ -8,5 +8,5 @@ export const usePaymentWidget = () => {
     throw "usePaymentWidget must be used inside PaymentWidgetProvider";
   }
 
-  return context.paymentWidget;
+  return context;
 };

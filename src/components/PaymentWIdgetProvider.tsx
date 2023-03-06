@@ -1,7 +1,8 @@
 import type { PaymentWidgetInstance } from "@tosspayments/payment-widget-sdk";
 import { loadPaymentWidget } from "@tosspayments/payment-widget-sdk";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode, useEffect, useRef, useState } from "react";
 import { PaymentWidgetContext } from "../contexts";
+import { PaymentMethodsInstance } from "../types";
 
 export const PaymentWidgetProvider: React.FC<{
   children: ReactNode;
@@ -11,6 +12,9 @@ export const PaymentWidgetProvider: React.FC<{
   const [paymentWidget, setPaymentWidget] = useState<
     PaymentWidgetInstance | undefined
   >(undefined);
+  const paymentMethodsRef = useRef<PaymentMethodsInstance | undefined>(
+    undefined,
+  );
 
   useEffect(() => {
     loadPaymentWidget(clientKey, customerKey).then(
@@ -21,7 +25,7 @@ export const PaymentWidgetProvider: React.FC<{
   }, [clientKey, customerKey]);
 
   return (
-    <PaymentWidgetContext.Provider value={{ paymentWidget }}>
+    <PaymentWidgetContext.Provider value={{ paymentWidget, paymentMethodsRef }}>
       {children}
     </PaymentWidgetContext.Provider>
   );

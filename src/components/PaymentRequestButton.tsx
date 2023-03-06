@@ -9,7 +9,7 @@ export const PaymentRequestButton: React.FC<
     onFail?: (error: unknown) => void;
   }
 > = ({ paymentRequestParameters, onClick, onSuccess, onFail, ...props }) => {
-  const paymentWidget = usePaymentWidget();
+  const { paymentWidget } = usePaymentWidget();
 
   const handleClick = useCallback(
     (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {

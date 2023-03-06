@@ -1,18 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { usePaymentWidget } from "../hooks/usePaymentWidget";
-import { PaymentMethodsInstance } from "../types";
 
 export const PaymentMethodsSection: React.FC<
   JSX.IntrinsicElements["section"] & {
     id?: string;
     amount: number;
-    amountUpdateReason?: string;
   }
-> = ({ id = "payment-methods", amount, amountUpdateReason, ...props }) => {
-  const paymentWidget = usePaymentWidget();
-  const paymentMethodsRef = useRef<PaymentMethodsInstance | undefined>(
-    undefined,
-  );
+> = ({ id = "payment-methods", amount, ...props }) => {
+  const { paymentWidget, paymentMethodsRef } = usePaymentWidget();
 
   useEffect(() => {
     const paymentMethods = paymentWidget?.renderPaymentMethods(
@@ -22,13 +17,7 @@ export const PaymentMethodsSection: React.FC<
     if (paymentMethods) {
       paymentMethodsRef.current = paymentMethods;
     }
-  }, [amount, id, paymentWidget]);
-
-  useEffect(() => {
-    if (amountUpdateReason) {
-      paymentMethodsRef.current?.updateAmount(amount, amountUpdateReason);
-    }
-  }, [amount, amountUpdateReason]);
+  }, [amount, id, paymentMethodsRef, paymentWidget]);
 
   return <section id={id} {...props} />;
 };

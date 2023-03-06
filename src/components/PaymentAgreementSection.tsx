@@ -8,7 +8,7 @@ export const PaymentAgreementSection: React.FC<
     onAgreementChange?: (agreementStatus: AgreementStatus) => void;
   }
 > = ({ id = "payment-agreement", onAgreementChange, ...props }) => {
-  const paymentWidget = usePaymentWidget();
+  const { paymentWidget } = usePaymentWidget();
 
   useEffect(() => {
     const agreementStatus = paymentWidget?.renderAgreement("#" + id);
