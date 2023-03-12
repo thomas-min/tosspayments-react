@@ -1,6 +1,6 @@
 {
   "name": "@thomas-min/tosspayments-react",
-  "version": "0.0.4",
+  "version": "0.0.1",
   "description": "An unofficial react wrapper around tosspayments browser-sdk",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/thoams-min"
@@ -44,7 +44,8 @@
   "peerDependencies": {
     "@tosspayments/payment-widget-sdk": "^0.5.4",
     "@tosspayments/payment-sdk": "^1.4.0",
-    "react": "^18.2.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
